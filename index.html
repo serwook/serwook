@@ -2,20 +2,67 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
+
 <style>
-body{font-family:sans-serif;background:#111;color:#eee}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px}
-a{display:block;padding:18px;background:#222;border-radius:12px;
-   text-align:center;color:#eee;text-decoration:none}
-a:hover{background:#333}
+/* ===== 전체 ===== */
+body {
+  margin: 0;
+  background: #0f0f0f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  color: #fff;
+}
+
+/* ===== 그리드 ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* A16 기준 2열이 가장 안정적 */
+  gap: 22px;
+  padding: 28px;
+}
+
+/* ===== 버튼 ===== */
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;                 /* 터치 최적 */
+  background: #1f1f1f;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;              /* 글씨 큼 */
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+a:active {
+  background: #333;
+  transform: scale(0.97);
+}
+
+/* ===== 큰 화면(태블릿) 대응 ===== */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  a {
+    height: 110px;
+    font-size: 24px;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="grid">
-  <a href="https://www.naver.com">네이버</a>
-  <a href="https://www.google.com">구글</a>
-  <a href="https://www.youtube.com">유튜브</a>
-</div>
+  <div class="grid">
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+    <a href="https://www.youtube.com">유튜브</a>
+    <a href="https://m.dcinside.com">디시</a>
+  </div>
 </body>
 </html>
